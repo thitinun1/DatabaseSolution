@@ -63,7 +63,7 @@ app.post("/students", async (req, res) => {
 
     const connection = await dbConn
     const rows = await connection.query("insert into students (name,age,phone,email) values('"+name+"','"+age+"',"+phone+",'"+email+"')")
-    res.status(201).send(rows)
+    res.status(201).send(`<h1 style = 'color : green;'> คุณได้ทำการเพิ่มข้อมูลเรียบร้อยแล้ว จำนวน ${rows[0].affectedRows} แถว</h1>`);
 })
 
 // PUT
